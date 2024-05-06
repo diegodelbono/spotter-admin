@@ -1,0 +1,26 @@
+.#{$checkbox-prefix} {
+    display: flex;
+    //border: 2px solid red;
+    gap: 0.5rem;
+
+    .input-checkbox {
+        @extend %input;
+        border-radius: $checkbox-radius;
+        height: $checkbox-size;
+        padding: 0;
+        width: $checkbox-size;
+
+        &:checked {
+            background-color: $checkbox-checked-color;
+            border-color: $checkbox-checked-color;
+
+            &::after {
+                background: url($checkbox-checked-icon) center center no-repeat;
+                content: '';
+                position: absolute;
+                width: $checkbox-size;
+                height: $checkbox-size;
+            }
+        }
+    }
+}

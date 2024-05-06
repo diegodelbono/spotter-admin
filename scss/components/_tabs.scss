@@ -1,0 +1,28 @@
+.#{$tabs-prefix} {
+    border-bottom: $tabs-border;
+    margin-bottom: $tabs-margin;
+}
+
+.#{$tab-prefix} {
+    &__button {
+        @include transition($transition-base);
+        border-bottom: $tab-border;
+        color: $tab-color;
+        font-size: $tab-font-size;
+        padding: $tab-padding;
+        margin-bottom: -1px;
+
+        @include hover-focus {
+            color: $tab-hover-color;
+        }
+
+        @include focus {
+            box-shadow: $tab-focus-shadown;
+        }
+
+        &--active {
+            border-color: $tab-active-color;
+            color: $tab-active-color;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.#{$button-prefix} {
+    background: transparent;
+    border-radius: $btn-radius;
+    color: $btn-color;
+    cursor: pointer;
+    @include display-flex;
+    padding: $btn-padding;
+    @include transition($transition-base);
+
+    &--full {
+        width: 100%;
+    }
+
+    .icon {
+        background-color: white;
+        margin-right: 0.5rem;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .#{$button-prefix}-#{$color} {
+        background-color: $value;
+        border: $border-base $value;
+
+        @include hover {
+            background: darken($value, 20%);
+            border: $border-base darken($value, 20%);
+        }
+
+        @include focus {
+            border-color: $primary-color;
+            box-shadow: $shadow-base;
+        }
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .#{$button-prefix}-outline-#{$color} {
+        border: $border-base $value;
+        background-color: transparent;
+        color: $value;
+
+        .icon {
+            background-color: $value;
+        }
+
+        @include hover {
+            border: $border-base darken($value, 20%);
+            color: darken($value, 20%);
+        }
+    }
+}
+
+.#{$button-prefix}-group {
+    @include display-flex($justify: flex-end);
+    gap: $gap-sm;
+}
+
+.icon-btn {
+    background-color: $blue-light;
+    @include display-flex;
+    height: 2rem;
+    width: 2rem;
+    border-radius: $border-radius-circle;
+}

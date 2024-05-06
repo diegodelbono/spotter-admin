@@ -1,0 +1,41 @@
+.#{$card-prefix} {
+    border: $card-border;
+    border-radius: $card-radius;
+    @include display-flex($align: normal, $justify: flex-start);
+    margin-bottom: $card-margin;
+    overflow: hidden;
+    position: relative;
+    @include transition($transition-base);
+
+    @include hover {
+        border-color: $card-hover-border;
+        box-shadow: $card-hover-shadown;
+    }
+
+    &--expanded {
+        border-color: $card-expanded-border;
+    }
+
+    &__date {
+        background-color: $card-date-bg;
+        @include display-flex($direction: column, $justify: flex-start);
+        padding: $card-date-padding;
+        flex: 0 0 $card-date-width;
+    }
+
+    &__wrapper {
+        padding: $card-wrapper-padding;
+        flex-grow: 1;
+    }
+
+    $card-content-margin: $margin-lg 0;
+    $card-content-max-width: 75%;
+
+    &__content {
+        margin: $card-content-margin;
+
+        @include breakpoint(lg, min) {
+            width: $card-content-max-width;
+        }
+    }
+}

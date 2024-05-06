@@ -1,0 +1,43 @@
+.#{$login-prefix} {
+    height: 100vh;
+    overflow: hidden;
+
+    @include breakpoint(md, min) {
+        background-color: $login-bg;
+        padding: $login-padding;
+    }
+
+    &__wrapper {
+        background-color: $login-wrapper-bg;
+        border-radius: $login-wrapper-radius;
+        @include display-flex($direction: column);
+        height: 100%;
+    }
+
+    &__form {
+        @include display-flex($align: normal, $direction: column);
+        max-width: $login-form-width;
+        width: 100%;
+    }
+
+    &__header {
+        margin-bottom: $login-header-margin;
+    }
+
+    &__psw {
+        margin: $login-psw-margin;
+        text-align: center;
+    }
+
+    &__content {
+        margin: $login-content-margin;
+
+        .section-title {
+            margin-bottom: $margin-lg;
+        }
+    }
+
+    &__footer {
+        @include display-flex($justify: space-between);
+    }
+}

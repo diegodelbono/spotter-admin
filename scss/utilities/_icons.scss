@@ -1,0 +1,38 @@
+@each $name,
+$value in $icon-sizes {
+    .#{$icon-prefix}--#{$name} {
+        display: inline-block;
+        height: $value;
+        width: $value;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .#{$icon-prefix}--#{$color} {
+        background-color: $value;
+    }
+}
+
+// Files icons
+$icons-file: (
+    "authorized": "i-authorized.svg",
+    "arrow": "i-arrow.svg",
+    "arrow-menu": "i-arrow-menu.svg",
+    "bulk": "i-bulk.svg",
+    "communications": "i-communications.svg",
+    "customers": "i-customers.svg",
+    "close": "i-close.svg",
+    "errors": "i-errors.svg",
+    "events": "i-events.svg",
+    "plus": "i-plus.svg",
+    "invitations": "i-invitations.svg",
+    "users": "i-users.svg",
+);
+
+@each $icon-name,
+$icon-file in $icons-file {
+    .#{$icon-prefix}--#{$icon-name} {
+        mask-size: contain !important;
+        @include mask($icon-file );
+    }
+}

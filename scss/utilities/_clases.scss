@@ -1,0 +1,31 @@
+$profile-radius: $border-radius-circle;
+$profile-size: 3rem;
+
+.profile {
+    @include display-flex($justify: flex-start);
+    gap: 1rem;
+
+    &__figure {
+        border-radius: $profile-radius;
+        height: $profile-size;
+        width: $profile-size;
+        overflow: hidden;
+    }
+}
+
+.count {
+    color: $primary-color;
+    font-size: $font-size-sm;
+    vertical-align: super;
+}
+
+.section-title {
+    color: $primary-color;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}

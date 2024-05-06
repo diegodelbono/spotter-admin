@@ -1,0 +1,8 @@
+.form-group {
+    @include display-flex($align: flex-start);
+    gap: $gap-md;
+
+    .form-box {
+        flex-grow: 1;
+    }
+}
